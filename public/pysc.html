@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Psychiatrist</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+ <div class="jumbotron">
+        <h1 class="display-6">Hello User</h1>
+        <p class="lead">This is a  simple appointment management application..</p>
+        <hr class="my-4">
+        <p>Get Started to be assigned a Psychiatrist</p>
+        <p class="lead">
+          <a class="btn btn-primary btn-lg " id="psyc_id" onclick=" psyc_button()">Learn more</a>
+          <p>Please choose the timmings below:</p>
+          <a class="btn btn-primary btn-lg " id="date_id" onclick=" date_button()">Select Dates</a>
+          <p id="psyc_name"></p>
+        </p>
+  </div>    
+
+ <div id="center">
+  <form action="info.html">
+    <input type="submit" value= "Psychatrist Information" class="btn btn-primary"/>
+</form>
+ </div>
+
+
+
+<script src="psyc.js"></script>
+<!-- <script src="demo.js"></script>
+<script src="new.js"></script>
+ --></body>
+</html>
+

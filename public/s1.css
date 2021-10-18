@@ -1,0 +1,47 @@
+label,input,textarea{
+    display: block;
+}
+*{
+    margin: 0;
+    padding: 10px;
+}
+body {
+    background: #80ced6;
+    font-size: 15px;
+    font-family: 'Open Sans', sans-serif;;
+} 
+.Name{
+    width: 10%;
+    outline: black;
+    padding-bottom: 5px;
+
+}
+.Email{
+    width: 10%;
+    outline: black;
+    padding-bottom: 5px;
+}
+
+.Subject{
+    width: 10%;
+    outline: black;
+    padding-bottom: 5px;
+}
+.Message{
+    width: 10%;
+    outline: black;
+    padding-bottom: 5px;
+}
+button{
+    background:blue;
+    width: auto;
+    outline: white;
+    border-radius: 30px;
+
+    box-shadow: 0px 5px 15px 0px rgba(red, green, blue, alpha);
+}
+h1{
+    color: blue;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
