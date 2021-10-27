@@ -10,6 +10,28 @@
     font-family: 'Helvetica', serif;
 }
 
+
+
+a:link, a:visited {
+    background-color: #767474;
+    color: white;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+   float: right;
+    text-align:right;
+    padding: 16px 32px;
+    margin: 4px 2px;
+    border-radius: 10px;
+    font-family: 'Helvetica', serif;
+    font-size: 20px;
+    width: 25%;
+  }
+  
+  a:hover, a:active {
+    background-color: #767474;
+  }
+
 input {
     font-family: 'Helvetica', serif;
     width: 100%;
@@ -22,7 +44,7 @@ input {
 
 input[type=submit] {
     font-family: 'Helvetica', serif;
-    width: 100%;
+    width: 25%;
     background-color: #767474;
     border: none;
     color: white;
@@ -30,20 +52,3 @@ input[type=submit] {
     margin: 4px 2px;
     border-radius: 10px;
 }
-
-#center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-
-.pysc-center{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-}
-
-

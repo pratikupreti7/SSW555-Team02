@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Tell Us How We Did?</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<style>
+.col-md-6{
+		background-color:beige;
+}
+p{
+	font-size: 25px;
+
+}
+.head1{
+	background-color: white;
+	height: 70px;
+}
+.head1 h2{
+	color: black;
+	font-family: 'Times New Roman', Times, serif;
+	line-height: 50px;
+	text-align: center;
+
+}
+#select1 h4 , #select2 h4 , #select3 h4{
+	background-color:black;
+	color:white;
+	height: 40px;
+	text-align: center;
+	line-height: 38px;
+	cursor: pointer;
+	border:1px solid beige;
+
+}
+
+.btn-info{
+	background-color: #0485e0;
+	color: #fff;
+	font-family: 'Times New Roman', Times, serif;
+	font-size: 20px;
+}
+
+</style>
+<script >
+$(document).ready(function(){
+  $("#select1").click(function(){
+    $("#select1 h4").css("background-color", "#0485e0");
+        $("#select1 h4").css("color", "#fff");
+      $("#select2 h4").css("background-color", "#fff");
+      $("#select2 h4").css("color", "#000");
+     $("#select3 h4").css("background-color", "#fff");
+      $("#select3 h4").css("color", "#000");
+       
+     
+  });
+});
+
+$(document).ready(function(){
+  $("#select2").click(function(){
+    $("#select2 h4").css("background-color", "#0485e0");
+    $("#select2 h4").css("color", "#fff");
+    $("#select1 h4").css("background-color", "#fff");
+      $("#select1 h4").css("color", "#000");
+     $("#select3 h4").css("background-color", "#fff");
+      $("#select3 h4").css("color", "#000");
+       
+  });
+});
+
+$(document).ready(function(){
+  $("#select3").click(function(){
+    $("#select3 h4").css("background-color", "#0485e0");
+    $("#select3 h4").css("color", "#fff");
+    $("#select1 h4").css("background-color", "#fff");
+      $("#select1 h4").css("color", "#000");
+     $("#select2 h4").css("background-color", "#fff");
+      $("#select2 h4").css("color", "#000");
+       
+  });
+});
+
+
+</script>
+<body>
+
+<div class="container">
+<form>
+<br>
+<div class="col-md-3"></div>
+
+
+<div class="col-md-6">
+	
+<div class="head1">
+		<h2>Tell Us How We did?</h2>
+</div>
+<br><br>
+	<p>Did you liked our services?</p>
+	<div class="row">
+		<div class="col-md-4" id="select1"><h4>Yes</h4> </div>
+				<div class="col-md-4" id="select3"><h4>No</h4> </div>
+	</div>
+<br>
+<p>What was the reason for your visit?</p>
+<div class="row">
+	<div class="col-md-12">
+		<select class="form-control"  >
+			<option selected disabled="">Select</option>
+			<option>Psychiatrist appointment</option>
+			<option>Information regarding our services</option>
+            <option>Other reason</option>
+		
+		</select>
+	</div>
+</div>
+
+
+<br>
+<p>Will you recommend us ?</p>
+<div class="row">
+	<div class="col-md-12">
+		<select class="form-control">
+			<option selected disabled="">Select</option>
+			<option>Yes</option>
+			<option>No</option>
+		
+		</select>
+	</div>
+</div>
+
+<br>
+<p>Do you have any suggestion to make  our services?</p>
+<textarea class="form-control" required="" ></textarea>
+<br><br>
+<center>
+<button class="btn btn-info">Submit</button>
+</center>
+<br><br>
+</form>
+</div>
+<div class="col-md-3"></div>
+</div>
+</body>
+</html>

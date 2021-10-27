@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Putting User Input into JS Objects</title>
+	
+    <style>
+        .formBox{
+            padding: 1rem 2rem;
+			background-color:lime;
+            padding:30px 35px;
+			margin:-10px -33px;
+		    text-align:left;
+			border-radius:10px 10px 0 0
+        }
+    </style>
+</head>
+<body>
+    <form>
+	<div class="formBox">
+	<h>Edit Meeting Type:</h>
+	</div>
+        <div class="formBox">
+            <label for="title">Name:</label>
+            <input type="text" id="title" placeholder="Title"/>
+        </div>
+		<div class="formBox">
+            <label for="yr">Email Id:</label>
+            <input type="text" id="mail" placeholder="User Email Id"/>
+        </div>
+		<div class="formBox">
+            <label for="yr">Contact Number:</label>
+            <input type="text" id="contact" placeholder="User Contact Number"/>
+        </div>
+        <div class="formBox">
+            <label for="yr">Meeting type:</label>
+            <input type="text" id="yr" placeholder="Zoom / In person"/>
+        </div>
+        <div class="formBox">
+            <button id="btn">Click to Update</button>
+        </div>
+        <div id="msg">
+            <pre></pre>
+        </div>
+    </form>
+    <script>
+        let names = [];
+       
+        const addName = (ev)=>{
+            ev.preventDefault();  
+            let name = {
+                id: Date.now(),
+                title: document.getElementById('title').value,
+                type: document.getElementById('yr').value
+            }
+            names.push(name);
+            document.forms[0].reset(); 
+
+            
+            console.warn('added' , {name} );
+           
+            localStorage.setItem('MeetingTypeList', JSON.stringify(names) );
+        }
+        document.addEventListener('DOMContentLoaded', ()=>{
+            document.getElementById('btn').addEventListener('click', addName);
+			
+        });
+    </script>
+</body>
+</html>

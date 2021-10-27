@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp Form - MongoDB</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="styles.css">
+  
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+
+            </div>
+            <div class="col-md-6 main">
+                <form  id="form "action="/sign" method="POST">
+                    <h2>SignUp Form</h2>
+                    <input type="text" class="box" id="name" name="name" placeholder="Name" required />
+                    <br>
+                    <input type="text" class="box" id="email" name="email" placeholder="Email" required />
+                    <br>
+                    <input type="text" class="box" id="phno" name="phno" placeholder="Mobile" required />
+                    <br>
+                    <input type="password" class="box" id="password" name="password" placeholder="Password" required />
+                    <p>Please enter a valid <br>  password Minimum eight characters <br> at least one letter <br> one number</p>
+                    <br>
+                    <br>
+                    <input type="submit" value="Submit" id="submit" onclick="errorMessage(event)" />
+                    <br>
+                    <br>
+                    <div class="div-1" id="error"></div>
+
+                </form>
+            </div>
+            <div class="col-md-3">
+            </div>
+        </div>
+    </div>
+
+</body>
+<script>
+    function errorMessage(event) {
+        var error = document.getElementById("error")
+        var password=document.getElementById("password").value;
+        var email=document.getElementById("email").value
+        var phno=document.getElementById("phno").value
+        var name=document.getElementById("name").value
+
+        if ((/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/).test(email)==false) /*joe@aol.com */
+        {
+            error.textContent = "Please enter a valid email"
+            
+            event.preventDefault()
+        }
+        else if ((/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/).test(password)==false) /*Minimum eight characters, 
+                                                                                    at least one letter and one number*/
+        {
+            error.textContent = "Please enter a valid password Minimum eight characters at least one letter and one number"
+            event.preventDefault()
+        }
+        else if((/^\d{10}$/).test(phno)==false )
+        {
+            error.textContent = "Please enter a valid phonenumber"
+            event.preventDefault()
+        }
+
+        else if((/^[a-zA-Z0-9]{5,20}$/).test(name)==false )
+        {
+            error.textContent = "Please enter a valid name"
+            event.preventDefault()
+        } 
+        else {
+            error.textContent = ""
+        }
+    }
+</script>
+
+</html>

@@ -2,34 +2,87 @@
 <head>
 <title>available slots</title>
 </head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
+	<link rel="stylesheet" href="../sprint2/main.css">
+<style>
+	table, th, td {
+	border:1px solid black;
+	}
+	.pysc-center{
+		display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    margin: 3px;
+		 
+	}
+	.btn{
+		margin: 5px;
+	}
+</style>
+
+
 <body>
-<body style="background-color:#FBEEE6 ">check available slots :</body>
-<p>
-<a href= "alan.html">name: Alan Pearl</a></p>
-        
-<p>
-<a href= "maurice.html">name: Maurice Markewich</a></p>
-       
-<p> 
-<a href= "issac.html">name: Joshua Issac Dorsky</a></p>
- <p>
-<a href= "nelson.html">name: Patrick Nelson</a> 
-</p>
-	<p>	
-<a href= "hillsman.html">name: Paul Hillsman</a> 
-</p>
-	<p>	
-<a href= "erikson.html">name: Cristian Erikson</a> 		
-</p>
-	<p>	
-<a href= "hall.html">name: ALex Hall</a>
-</p>
-	<p>	
-<a href= "kovacic.html">name: Mario Kovacic</a>
-</p>
-	<p>	
-<a href= "ramsey.html">name: Aron Ramsey</a>
-</p>
-<script src= pysc.js></script>
+
+
+	<div class="pysc-center">
+		<h2 class="text-center my-4">
+		  Did you attend the meeting?
+		</h2>
+		
+		<a class="btn btn-primary" href="../feedback.html" role="button">Give Us Feedback</a>
+		<a class="btn btn-primary" href="../pysc.html" role="button">No,Re-Schedule</a>
+	  </div>	
+
+
+   <div>
+		<table style="width:50%">
+		<tr>
+		<th>Psychiatrist Name</th></tr>
+		<tr>
+		<td>
+		<button onclick="displayPsyProfile('Alan Pearl')">name: Alan Pearl</button></p></td></tr> 
+		<!--a href= "alan.html">name: Alan Pearl</a></p></td></tr>-->
+				<tr>
+		<td>
+		<button onclick="displayPsyProfile('Maurice Markewich')">name: Maurice Markewich</button></p></td></tr> 
+		<!--a href= "maurice.html">name: Maurice Markewich</a></td></tr>-->
+		<tr>
+		<td>
+		<button onclick="displayPsyProfile('Joshua Issac Dorsky')">name: Joshua Issac Dorsky</button></p></td></tr> 
+			<!--a href= "issac.html">name: Joshua Issac Dorsky</a></td></tr>-->
+		<tr>
+		<td>
+		<button onclick="displayPsyProfile('Patrick Nelson')">name: Patrick Nelson</button></p></td></tr> 
+		<!--a href= "nelson.html">name: Patrick Nelson</a></td></tr>-->
+
+			<tr>
+		<td>
+		<button onclick="displayPsyProfile('Paul Hillsman')">name:  Paul Hillsman</button></p></td></tr> 
+		<!--a href= "hillsman.html">name: Paul Hillsman</a></td></tr>--> 
+
+		<tr>
+		<td>
+		<button onclick="displayPsyProfile('Cristian Erikson')">name: Cristian Erikson</button></p></td></tr> 	
+		<!--a href= "erikson.html">name: Cristian Erikson</a></td></tr>-->		
+		<tr>
+		<td>
+			<button onclick="displayPsyProfile('ALex Hall')">name: ALex Hall</button></p></td></tr> 
+		<!--a href= "hall.html">name: ALex Hall</a></td></tr>-->
+
+			<tr>
+		<td>
+		<button onclick="displayPsyProfile('Mario Kovacic')">name:  Mario Kovacic</button></p></td></tr>
+		<!--a href= "kovacic.html">name: Mario Kovacic</a></td></tr>-->
+		<tr>
+		<td>
+  		<button onclick="displayPsyProfile('Aron Ramsey')">name:  Aron Ramsey</button></p></td></tr>
+		<!--a href= "ramsey.html">name: Aron Ramsey</a></td></tr>-->
+		</p>
+    </div>
+    <script src= pysc1.js></script>
 </body>
 </html>
