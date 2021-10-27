@@ -20,9 +20,29 @@ var db = mongoose.connection;
 db.on('error',()=>console.log("Error in Connecting to Database"));
 db.once('open',()=>console.log("Connected to Database"))
 
+app.post("/login",(req,res)=>
+{
+var email=req.body.email;
+var password=req.body.password;
+var user=req.body;
 
 
+ db.collection('users').findOne({password:user.password},{email:user.email},function (err,existinguser)
+{
 
+    
+    if(existinguser!=null)
+    {
+        
+    res.redirect('pysc.html')
+
+}
+else
+{
+    res.redirect('login_fail.html')
+}
+})
+})
 
 app.post("/sign",(req,res)=>{
     var name = req.body.name;
@@ -53,7 +73,7 @@ app.post("/sign",(req,res)=>{
         console.log("Record Inserted Successfully");
     });
 
-    return res.redirect('pysc.html')
+    return res.redirect('signup_success.html')
         }
         else{
            return res.redirect('alreadyexists.html')

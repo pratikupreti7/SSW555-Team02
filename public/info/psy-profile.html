@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0;
+      }
+
+      html {
+        box-sizing: border-box;
+      }
+
+      *,
+      *:before,
+      *:after {
+        box-sizing: inherit;
+      }
+
+      .column {
+        float: middle;
+        width: 33.3%;
+        margin-bottom: 16px;
+        padding: 0 8px;
+      }
+
+      .card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        margin: 8px;
+        background-color: #f5cba7;
+      }
+
+      .about-section {
+        padding: 50px;
+        text-align: center;
+        background-color: blue;
+        color: white;
+      }
+
+      .container {
+        padding: 0 16px;
+      }
+
+      .container::after,
+      .row::after {
+        content: "";
+        clear: both;
+        display: table;
+      }
+
+      @media screen and (max-width: 650px) {
+        .column {
+          width: 100%;
+          display: block;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="row">
+      <div class="column">
+        <div class="card">
+          <div class="container">
+            <h2 id="psy_name"></h2>
+            <p id="psy_title"></p>
+            <p id="psy_issues"></p>
+            <p id="psy_mental_health"></p>
+            <p id="psy_patient_count"></p>
+            <p id="psy_timming"></p> 
+            <p id="psy_slots_available"></p>
+            <p>User Reviews:</p>
+            <p></p>
+            <p id="psy_review1"></p>
+            <p id="psy_review2"></p>
+            <p id="psy_review3"> </p>
+            <p id="psy_review4"> </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+        var psyProfileData = JSON.parse(localStorage.getItem('psyProfile'));
+        console.log(psyProfileData);
+        document.getElementById("psy_name").innerHTML = psyProfileData.name;
+        document.getElementById("psy_title").innerHTML = psyProfileData.bio;
+        document.getElementById("psy_issues").innerHTML = psyProfileData.issues;
+        document.getElementById("psy_mental_health").innerHTML = psyProfileData.mental_health;
+        document.getElementById("psy_patient_count").innerHTML = psyProfileData.patient_count ?  psyProfileData.patient_count : null;
+        document.getElementById("psy_timming").innerHTML = psyProfileData.timming ? psyProfileData.timming : null;
+        document.getElementById("psy_slots_available").innerHTML = psyProfileData.slots_available ?  psyProfileData.slots_available : null;
+        document.getElementById("psy_review1").innerHTML = psyProfileData.review1;
+        document.getElementById("psy_review2").innerHTML = psyProfileData.review2;
+        document.getElementById("psy_review3").innerHTML = psyProfileData.review3 ? psyProfileData.review3 : null; //ternary opertor
+        document.getElementById("psy_review4").innerHTML = psyProfileData.review4 ? psyProfileData.review4 : null;
+    </script>
+  </body>
+</html>

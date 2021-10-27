@@ -19,6 +19,10 @@ html {
   box-sizing: inherit;
 }
 
+#center{
+  margin-left: 370px;
+}
+
 .column {
   float: left;
   width: 33.3%;
@@ -77,6 +81,10 @@ html {
   cursor: pointer;
   width: 50%
   }
+
+.color{
+  color:#000
+}
 @media screen and (max-width: 650px) {
   .column {
     width: 100%;
@@ -168,11 +176,23 @@ html {
 </div>
 
 
-<div class="submit " id="center">
-  <form action=meeting.html>
-  <button class="btn btn-primary" type=submit>Type of Meeting</button>
-  </div>
+<div class="submit pysc-center left" id="center">
+  <h2 class="text-center my-4 color">
+    Go back to Appointment details:
+  </h2>
+  <form action=pysc.html>
+  <button class="btn btn-primary" type=submit>Change details</button>
+
   </form>
+</div>
+  
+  <div class="pysc-center">
+    <h2 class="text-center my-4">
+      Please Select the meeting type below:
+    </h2>
+    <a class="btn btn-primary" href="meeting.html" role="button">Select Meeting type</a>
+  
+  </div>
 </body>
 
 
