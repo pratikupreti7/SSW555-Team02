@@ -8,35 +8,41 @@
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <!-- <link rel="stylesheet" type="text/css" href="styles.css"> -->
+    <link rel="stylesheet" href="final.css">
   
 </head>
 
 <body>
 
-    <div class="container">
+    <div class="container login-box">
         <div class="row">
             <div class="col-md-3">
 
             </div>
-            <div class="col-md-6 main">
+            <div class="col-md-6 main  form-width">
                 <form  id="form "action="/sign" method="POST">
+                <div class="box">
                     <h2>SignUp Form</h2>
-                    <input type="text" class="box" id="name" name="name" placeholder="Name" required />
-                    <br>
-                    <input type="text" class="box" id="email" name="email" placeholder="Email" required />
-                    <br>
-                    <input type="text" class="box" id="phno" name="phno" placeholder="Mobile" required />
-                    <br>
-                    <input type="password" class="box" id="password" name="password" placeholder="Password" required />
-                    <p>Please enter a valid <br>  password Minimum eight characters <br> at least one letter <br> one number</p>
-                    <br>
-                    <br>
-                    <input type="submit" value="Submit" id="submit" onclick="errorMessage(event)" />
-                    <br>
-                    <br>
+                    <p class="text text-center color">
+                        Your help is one step away.....
+                     </p>
+                    <input type="text" class="box text-center color" id="name" name="name" placeholder="Name" required />
+                    <input type="text" class="box text-center color" id="email" name="email" placeholder="Email" required />
+                    
+                    <input type="text" class="box text-center color" id="phno" name="phno" placeholder="Mobile" required />
+                    
+                    <input type="password" class="box text-center color" id="password" name="password" placeholder="Password" required />
+                    
                     <div class="div-1" id="error"></div>
 
+                    <a class="btn btn-outline-info btn-main" >
+                        <!-- <input type="submit" value="Sign In" id="submit" class="login" /> -->
+                        <input class="login" type="submit" value="SignUp" id="submit" onclick="errorMessage(event)" />
+                    </a>
+                    
+                    <a class="btn btn-outline-info btn-main" id="form-button"  href="index.html">SignIn</a>
+                </div>
                 </form>
             </div>
             <div class="col-md-3">
@@ -55,25 +61,25 @@
 
         if ((/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/).test(email)==false) /*joe@aol.com */
         {
-            error.textContent = "Please enter a valid email"
+            error.textContent = "Please enter a valid email."
             
             event.preventDefault()
         }
         else if ((/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/).test(password)==false) /*Minimum eight characters, 
                                                                                     at least one letter and one number*/
         {
-            error.textContent = "Please enter a valid password Minimum eight characters at least one letter and one number"
+            error.textContent = "Please enter a valid password."
             event.preventDefault()
         }
         else if((/^\d{10}$/).test(phno)==false )
         {
-            error.textContent = "Please enter a valid phonenumber"
+            error.textContent = "Please enter a valid phonenumber."
             event.preventDefault()
         }
 
         else if((/^[a-zA-Z0-9]{5,20}$/).test(name)==false )
         {
-            error.textContent = "Please enter a valid name"
+            error.textContent = "Please enter a valid name."
             event.preventDefault()
         } 
         else {

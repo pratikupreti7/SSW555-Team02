@@ -4,32 +4,44 @@
 <head>
     <title> Signup Form</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://emoji-css.afeld.me/emoji.css" rel="stylesheet">
+    <link rel="stylesheet" href="final.css">
 </head>
 
 <body>
-    <br>
-    <br>
-    <br>
-    <div class="container">
+    <div class="container login-box">
         <div class="row">
             <div class="col-md-3">
+    
             </div>
-
-            <div class="col-md-6 main">
-
-                <h1> Login fail</h1>
-                <a href="index.html">Go back</a>
-
+            <div class="col-md-6 main form-width">
+                
+                <form  id="form "action="/login" method="POST">
+                    <div class="box">
+                        <h2>Welcome to  <span id="span-id">  Sanity! </span></h2>
+                        <h1> <span id="span-id">Login failed.. <i class="em em-disappointed" aria-role="presentation" aria-label="DISAPPOINTED FACE"></i></span></h1>
+                        
+                        <p class="text text-center color" id="span-id-red">
+                        Please enter your correct credentials.
+                        </p>
+                      
+                       
+    
+                        
+                        <a  class="btn btn-outline-info btn-main" id="form-button" href="index.html">SignIn</a>
+                        <a class="btn btn-outline-info btn-main" id="form-button"  href="signup.html">SignUp</a>
+                       
+                       
+                    </div>
+                    
+                </form>
             </div>
-
-
             <div class="col-md-3">
             </div>
-
         </div>
     </div>
+     
 </body>
+
 
 </html>
