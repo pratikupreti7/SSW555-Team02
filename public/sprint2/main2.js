@@ -54,7 +54,6 @@ document.addEventListener('DOMContentLoaded', () => {
                date : date.value,
             time : time.value,
                symptoms : symptoms.value,
-               pysc: pysc.value
           }
           
           let transaction = DB.transaction(['consultations'], 'readwrite');
@@ -97,7 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
                          <p class="font-weight-bold">Date:  <span class="font-weight-normal">${cursor.value.date}<span></p>
                          <p class="font-weight-bold">Time:  <span class="font-weight-normal">${cursor.value.time}<span></p>
                          <p class="font-weight-bold">Symptoms:  <span class="font-weight-normal">${cursor.value.symptoms}<span></p>
-                         <p class="font-weight-bold">Pysc:  <span class="font-weight-normal">${cursor.value.pysc}<span></p>
+                         
                     `;
 
                     

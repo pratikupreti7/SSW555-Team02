@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Form</title>
+    <link rel="stylesheet" href="style3.css" />
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <nav>
+        <div class="logo">
+            <h4><span id="span-id">  Sanity! </span></h4>
+            </div>
+        <ul class="nav-links">
+            <li>
+                <a href="pysc.html">Home</a>
+            </li>
+            <li>
+                <a href="info.html">Psychiatrist information</a>
+            </li>
+            
+            <li>
+              <a href="password.html">Change password</a>
+            </li>
+    
+            <li>
+                <a   href="changeuserdetails.html">Change your details</a>
+            </li>
+            <li>
+              <a href="index.html">Logout</a>
+          </li>
+        </ul>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+    <div class="container">
+      <form id="contact" method="post">
+        <h3>Contact Us</h3>
+        <!-- <h4>Contact us for custom quote</h4> -->
+        <fieldset>
+          <input
+            placeholder="Your name"
+            type="text"
+            tabindex="1"
+            required
+            autofocus
+            class="username"
+          />
+        </fieldset>
+        <fieldset>
+          <input
+            placeholder="Your Email Address"
+            type="email"
+            tabindex="2"
+            required
+            class="email"
+          />
+        </fieldset>
+        <fieldset>
+          <input type="text"
+            placeholder="Type your Mobile No." type="number" tabindex="1"
+            required
+            class="PhoneNumber"
+          ></input>
+        </fieldset>
+
+        <fieldset>
+          <textarea
+            placeholder="Type your message here...."
+            tabindex="5"
+            required
+            class="message"
+          ></textarea>
+        </fieldset>
+        <fieldset>
+          <button
+            name="submit"
+            type="submit"
+            id="contact-submit"
+            data-submit="...Sending"
+            class="submit"
+          >
+            Submit
+          </button>
+        </fieldset>
+      </form>
+    </div>
+
+    <!-- loader -->
+    <div class="loader">
+      <img
+        src="https://media.giphy.com/media/MEiZ5h8lOkM7rwideE/giphy.gif"
+        alt=""
+      />
+    </div>
+
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"
+    ></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script type="text/javascript">
+      // User ID
+      // user_id
+      // Access Token
+      // random_access-token
+
+      (function () {
+        // emailjs.init("USERID");
+        emailjs.init("user_SXwbm2bfwtluGBhARcTaf");
+      })();
+
+      /**
+        emailjs.send("SERVICE ID", "TEMPLATE NAME", {
+          to_name: "USERNAME",
+          from_name: "FROM NAME",
+          message: "MESSAGE",
+        });
+       **/
+
+      function validate() {
+        let loader = document.querySelector(".loader");
+        let name = document.querySelector(".username");
+        let email = document.querySelector(".email");
+        let msg = document.querySelector(".message");
+        let btn = document.querySelector(".submit");
+
+        btn.addEventListener("click", (e) => {
+          e.preventDefault();
+          if (name.value == "" || email.value == "" || msg.value == "") {
+            emptyerror();
+          } else {
+            loader.style.display = "flex";
+            sendmail(name.value, email.value, msg.value);
+            success();
+            loader.style.display = "none";
+          }
+        });
+      }
+      validate();
+
+      function sendmail(name, email, msg) {
+        emailjs.send("service_id", "template_name", {
+          to_name: "your recipient name",
+          from_name: email,
+          message: msg,
+        });
+      }
+
+      function emptyerror() {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Fields cannot be empty!",
+        });
+      }
+
+      function error() {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Something went wrong!",
+        });
+      }
+
+      function success() {
+        Swal.fire({
+          icon: "success",
+          title: "Success...",
+          text: "Successfully sent message",
+        });
+      }
+    </script>
+  </body>
+</html>

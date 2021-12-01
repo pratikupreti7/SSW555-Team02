@@ -113,6 +113,31 @@ app.post("/sign",(req,res)=>{
 })
 
 
+
+app.post("/changeuserdetails",(req,res)=>
+{
+var email=req.body.email;
+var password=req.body.password;
+var user=req.body;
+
+
+ db.collection('users').findOne({name:user.name,password:user.password},function (err,existinguser)
+{
+
+    
+    if(existinguser!=null)
+    {
+        
+        db.collection('users').updateOne({name:user.name},{$set:{email:user.email, phno: user.phno}})
+res.redirect('index.html')
+}
+else
+{
+    res.redirect('login_fail.html')
+}
+})
+})
+
 app.get("/",(req,res)=>{
     res.set({
         "Allow-access-Allow-Origin": '*'
