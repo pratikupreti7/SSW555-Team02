@@ -116,3 +116,13 @@ nav{
 #span-id{
     color:#03e9f4;
   }
+
+  .nav-links li {
+    list-style: none;
+    margin: 0px;
+    padding: 19px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}

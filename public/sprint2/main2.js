@@ -10,16 +10,14 @@ let consultations = document.querySelector('#consultations');
 let services = document.querySelector('#services');
 
 document.addEventListener('DOMContentLoaded', () => {
-     // create the database
+     
      let ScheduleDB = window.indexedDB.open('consultations', 1);
-
-     // if there's an error
      ScheduleDB.onerror = function() {
           console.log('error');
      }
-     // if everything is fine, assign the result is to the (letDB) instance 
+     
      ScheduleDB.onsuccess = function() {
-          // console.log('Database Ready');
+     
 
           
           DB = ScheduleDB.result;
@@ -39,9 +37,10 @@ document.addEventListener('DOMContentLoaded', () => {
           objectStore.createIndex('contact', 'contact', { unique: false } );
           objectStore.createIndex('date', 'date', { unique: false } );
           objectStore.createIndex('time', 'time', { unique: false } );
+          objectStore.createIndex('pysc', 'pysc', { unique: false } );
           objectStore.createIndex('symptoms', 'symptoms', { unique: false } );
 
-          //console.log('Database ready and fields created!');
+         
      }
 
      form.addEventListener('submit', addConsultations);
@@ -54,7 +53,8 @@ document.addEventListener('DOMContentLoaded', () => {
              contact : contact.value,
                date : date.value,
             time : time.value,
-               symptoms : symptoms.value
+               symptoms : symptoms.value,
+               pysc: pysc.value
           }
           
           let transaction = DB.transaction(['consultations'], 'readwrite');
@@ -65,12 +65,12 @@ document.addEventListener('DOMContentLoaded', () => {
                form.reset();
           }
           transaction.oncomplete = () => {
-               //console.log('New schedule added');
+               
 
                showConsultations();
           }
           transaction.onerror = () => {
-              //console.log();
+             
           }
 
      }
@@ -97,6 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
                          <p class="font-weight-bold">Date:  <span class="font-weight-normal">${cursor.value.date}<span></p>
                          <p class="font-weight-bold">Time:  <span class="font-weight-normal">${cursor.value.time}<span></p>
                          <p class="font-weight-bold">Symptoms:  <span class="font-weight-normal">${cursor.value.symptoms}<span></p>
+                         <p class="font-weight-bold">Pysc:  <span class="font-weight-normal">${cursor.value.pysc}<span></p>
                     `;
 
                     

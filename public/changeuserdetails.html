@@ -23,28 +23,31 @@
             <div class="col-md-6 main form-width">
 
                 
-                <form  id="form "action="/change" method="POST">
+                <form  id="form "action="/changeuserdetails" method="POST">
                     <div class="box">
                     <h2>Welcome to  <span id="span-id">  Sanity! </span></h2>
                     <p class="text text-center color">
                         Your help is one step away.....
                      </p>
-                    <h2>Change Your  Password</h2>
+                    <h2>Change Your  details</h2>
                    
                     <input type="text" class="box text-center" id="name" name="name" placeholder="Name" required />
                     
                     <input type="password" class="box text-center" id="password" name="password" placeholder="Password" required />
                     
-                    <input type="password" class="box text-center" id="newpassword" name="newpassword" placeholder="New Password" required />
-                
+                    <input type="text" class="box text-center color" id="email" name="email" placeholder="Email" required />
+                    
+                    <input type="text" class="box text-center color" id="phno" name="phno" placeholder="Mobile" required />
         
-                     <div class="div-1" id="error"></div>
+    
+                    <div class="div-1" id="error"></div>
 
                     <a class="btn btn-outline-info btn-main" >
                         <!-- <input type="submit" value="Sign In" id="submit" class="login" /> -->
-                        <input class="login" type="submit" value="Change Password" id="submit" onclick="errorMessage(event)" />
+                        <input class="login" type="submit" value="Update" id="submit" onclick="errorMessage(event)" />
                     </a>
                     <a class="btn btn-outline-info btn-main" id="form-button"  href="index.html">Go Back</a>
+
                        
                     
                     <div class="status"></div>
@@ -57,27 +60,30 @@
     </div>
 
 </body>
+
 <script>
     function errorMessage(event) {
         var error = document.getElementById("error")
-        var password=document.getElementById("newpassword").value;
+        var password=document.getElementById("password").value;
         var email=document.getElementById("email").value
         var phno=document.getElementById("phno").value
         var name=document.getElementById("name").value
 
-        
-        if ((/^([a-zA-Z0-9-!$%^&*()_+|~=`{}\[\]:\/;<>?,.@#]{6,})*$/).test(password)==false) /*Minimum eight characters, 
-                                                                                    at least one letter and one number*/
+        if ((/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/).test(email)==false) /*joe@aol.com */
         {
-            error.textContent = "Please enter a valid password."
+            error.textContent = "Please enter a valid email."
+            
             event.preventDefault()
         }
-      
+        else if((/^\d{10}$/).test(phno)==false )
+        {
+            error.textContent = "Please enter a valid phonenumber."
+            event.preventDefault()
+        }
+
         else {
             error.textContent = ""
         }
     }
 </script>
-
-
 </html>

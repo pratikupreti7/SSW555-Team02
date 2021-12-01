@@ -65,8 +65,9 @@
             
             event.preventDefault()
         }
-        else if ((/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/).test(password)==false) /*Minimum eight characters, 
-                                                                                    at least one letter and one number*/
+        else if ((/^([a-zA-Z0-9-!$%^&*()_+|~=`{}\[\]:\/;<>?,.@#]{6,})*$/).test(password)==false) /*no empty spaces and no spaces but can be any other 
+                                                                                                    character including special 
+                                                                                                characters and should be at least 6 characters long*/
         {
             error.textContent = "Please enter a valid password."
             event.preventDefault()
